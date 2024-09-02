@@ -4,14 +4,10 @@
     --navColor:#dc3545;
     --bgColor:#f7e8ca;
     --f-bg: #f8fbff;
+    --bg2:rgba(3, 113, 128, 0.5);
 }
 
 /* global css */
-/* section {
-    width: 100%;
-    margin: 25px 0px;
-    padding: 50px 0px;
-} */
 
 * {
     box-sizing: border-box;
@@ -77,11 +73,16 @@ body {
     display: grid !important;
     place-content: center !important;
     place-items: center !important;
-    background-color: rgba(3, 113, 128, 0.5) !important;
+    background-color: var(--bg2) !important;
     padding: 20px !important;
     color: rgba(255, 255, 255, 0.5) !important;
     font-weight: 700 !important;
 
+}
+
+.selected-page a {
+    color: var(--navColor) !important;
+    margin: 0px 5px;
 }
 /* navigation section */
 
@@ -477,10 +478,6 @@ header {
     background-size: cover;
 }
 
-.sub-content {
-    /* text-shadow: 0px 1px 10px #0005; */
-}
-
 .sub-content h6 {
     font-size: 16px;
     color: var(--navColor);
@@ -706,17 +703,23 @@ footer .copyright .copy-links div a {
 
 /* Flash sell section */
 .flash-sell,
-.new-arrival {
-    margin:80px 0px;
+.new-arrival,
+.top-categories {
+    margin:40px 0px;
     padding: 20px 0px;
 }
-.top-categories h4,
-.new-arrival h4,
-.flash-sell h4 {
+.shop-section-header h4 {
     border-top: .5px solid #0005;
     border-bottom: .5px solid #0005;
     padding: 10px 0px 10px 10px;
     color: var(--navColor);
+}
+
+.shop-section-header h1 {
+    padding: 10px 20px;
+    background-color: var(--bgColor);
+    color: var(--navColor);
+    border-radius: 8px;
 }
 
 .show-all a {
@@ -892,4 +895,236 @@ footer .copyright .copy-links div a {
     .top-categories .show-all {
         translate: 90%;
     }
+}
+
+
+/* blog section */
+.blog-banner {
+    margin: 40px 0px;
+    padding: 10px 0px;
+}
+
+@media (max-width: 767px) {
+    .blog-banner {
+      display: none;
+    }
+  }
+
+.blog-banner .banner {
+    background-color: transparent;
+    gap: 10px;
+    aspect-ratio: 3/1;
+    height: 50vh;
+}
+
+.blog-banner .banner .blog-bannner-img {
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+    transition: 0.3s;
+    position: relative;
+    inset: 0; 
+    background-size: cover;
+    border-radius: 100px;
+}
+.blog-banner .banner .blog-bannner-img:hover {
+    flex: 10;
+    border-radius: 0px;
+
+}
+
+.blog-banner .banner .blog-bannner-img h3 {
+    position: absolute;
+    z-index: 10;
+    color: #fff;
+    font-size: 32px;
+    transform: rotate(90deg);
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    text-wrap: nowrap;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.616);
+    transition: .3s;
+}
+
+.blog-banner .banner .blog-bannner-img:hover h3 {
+    opacity: 0;
+}
+
+.blog-banner .banner .blog-bannner-img img {
+    object-fit: cover;
+    width: auto; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.blog-banner .banner .blog-bannner-img .blog-banner-details {
+    background: linear-gradient(to bottom, rgba(3, 113, 128, 0.1), rgba(3, 113, 128, .7));
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.blog-banner .banner .blog-bannner-img .blog-banner-details div {
+    width: 60%;
+    margin: 10px 20px;
+    padding: 20px 10px;
+    background: #fff5;
+    backdrop-filter: blur(5px);
+    border-radius: 8px ;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all .3s;
+    transition-delay: .3s;
+}
+
+.blog-banner .banner .blog-bannner-img .blog-banner-details div h5 {
+    color: #fff;
+    font-size: 400;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
+    margin: 5px 0px;
+    padding-bottom: 3px;
+    border-bottom: .5px solid #fff;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .5s;
+}
+
+.blog-banner .banner .blog-bannner-img .blog-banner-details div p {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.74);
+    margin: 10px 0px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .7s;
+}
+
+.blog-banner .banner .blog-bannner-img .blog-banner-details div span {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: .3s;
+    transition-delay: 1s;
+}
+
+.blog-banner .banner .blog-bannner-img:hover div,
+.blog-banner .banner .blog-bannner-img:hover .blog-banner-details div h5,
+.blog-banner .banner .blog-bannner-img:hover .blog-banner-details div p,
+.blog-banner .banner .blog-bannner-img:hover .blog-banner-details div span {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.blog-banner .banner .blog-bannner-img:not(:hover) div,
+.blog-banner .banner .blog-bannner-img:not(:hover) .blog-banner-details div h5,
+.blog-banner .banner .blog-bannner-img:not(:hover) .blog-banner-details div p,
+.blog-banner .banner .blog-bannner-img:not(:hover) .blog-banner-details div span {
+    transition-delay: 0s;
+}
+
+/* blog-section  */
+.blog-section {
+    margin: 80px 0px;
+    padding: 20px 0px;
+    width: 100%;
+}
+
+.blog-section .section-header {
+    font-size: 52px;
+    padding: 10px;
+    border-top: .5px solid #0005 ;
+    border-bottom: .5px solid #0005 ;
+    background-color: var(--bgColor);
+}
+
+
+.blog-section .daily-post {
+    border: .5px solid #0005;
+    box-shadow: 0px 0px 5px #0005;
+    margin: 20px 0px;
+}
+
+.blog-section .daily-post img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2.5px solid var(--navColor);
+}
+
+.blog-section .daily-blog-content h5 {
+    font-size: 22px;
+    margin: 10px 0px;
+    font-weight: 400;
+}
+
+.blog-section .daily-blog-content h5 a {
+    color: #000;
+}
+
+.blog-section .daily-blog-content h5:hover a {
+    color: blue;
+}
+
+.blog-section .daily-blog-content .blog-up-detail {
+    gap: 20px;
+    margin:10px 0px 20px 0px;
+    font-weight: 300;
+    font-size: 14px;
+}
+.blog-section .daily-blog-content .blog-up-detail a {
+    color: rgba(0, 0, 0, 0.709);
+    
+}
+.blog-section .daily-blog-content .blog-up-detail a:hover {
+    color: blue;
+}
+
+.blog-section .daily-blog-content p {
+    font-size: 15;
+    margin: 10px 0px 20px 0px;
+    font-weight: 400;
+    line-height: 1.8;
+    line-break: auto;
+} 
+
+/* blog sidebar */
+.blg-sider {
+    position:relative;
+}
+.blog-side-bar .social-links {
+    gap: 20px;
+    font-size: 20px;
+}
+
+.blog-side-bar .social-links a {
+    color: #000;
+}
+
+.blog-side-bar .social-links a:hover {
+    color: blue;
+}
+
+.suggestions .suggest {
+    gap: 10px;
+    margin: 10px 0px; 
+}
+
+.suggestions .suggest h6 a {
+    color: #000;
+}
+
+.suggestions .suggest:hover a {
+    color: blue;
 }
