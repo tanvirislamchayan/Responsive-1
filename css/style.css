@@ -24,6 +24,29 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
 }
+h1,h2,h3,h4,h5,h6 {
+    cursor: pointer;
+}
+
+h5 {
+    font-size: 22px;
+    margin: 10px 0px;
+    font-weight: 400;
+}
+
+ h5 a {
+    color: #000;
+}
+
+h5:hover a {
+    color: blue;
+}
+
+color {
+    color:var(--navColor);
+    font-size: 25px !important;
+    font-weight: 400;
+}
 
 .f-header {
     width: 100%;
@@ -42,6 +65,7 @@ body {
     text-decoration: none;
     transition: .3s;
     border: none;
+    cursor: pointer;
 }
 
 .theme-btn:hover {
@@ -64,6 +88,7 @@ body {
     background: none !important;
     display: none !important;
     -webkit-backface-visibility: visible;
+    backface-visibility: visible;
     transition: opacity .2s ease;
     border-radius: 0 !important;
     padding: 10px !important;
@@ -1068,20 +1093,6 @@ footer .copyright .copy-links div a {
     border-bottom: 2.5px solid var(--navColor);
 }
 
- .daily-blog-content h5 {
-    font-size: 22px;
-    margin: 10px 0px;
-    font-weight: 400;
-}
-
- .daily-blog-content h5 a {
-    color: #000;
-}
-
- .daily-blog-content h5:hover a {
-    color: blue;
-}
-
 .daily-blog-content .blog-up-detail {
     gap: 20px;
     margin:10px 0px 20px 0px;
@@ -1159,9 +1170,6 @@ footer .copyright .copy-links div a {
     background-color: var(--bgColor);
 }
 
-.blog-main-content .blog-header {
-}
-
 .blog-content {
     border: .5px solid #0005;
     box-shadow: 0px 0px 8px #0005;
@@ -1207,4 +1215,164 @@ details p {
 .blog-details p {
     font-size: 18px;
     line-height: 1.5;
+}
+
+
+/* buy now section */
+.product-section {
+    margin: 80px 0px;
+    padding: 20px 0px;
+    width: 100%;
+    position: relative;
+}
+
+.shop-filter {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    max-height: 300vh;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.toggler {
+    display: none !important;
+}
+
+@media (max-width: 767px) {
+    .shop-filter {
+        max-height: 0; 
+        transition: max-height 0.5s ease;
+    }
+    .toggler {
+        display: flex !important;
+    }
+}
+
+.shop-filter.show {
+    max-height: 300vh; /* Adjust as per content height */
+    transition: max-height 0.5s ease;
+}
+
+.toggler h4,
+.shop-filter .categories-selection h4 {
+    font-size: 20px !important;
+    font-weight: 400;
+}
+
+.toggler h4 span,
+.shop-filter .categories-selection h4 span {
+    color: var(--navColor);
+    font-size: 30px !important;
+    font-weight: 500;
+}
+
+.shop-filter .categories-selection .form-check {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* product details section */
+.product-details {
+    margin: 80px 0px;
+    padding:20px 0px;
+    width: 100%;
+}
+
+
+.main-img div, 
+.sub-img div {
+    aspect-ratio: 1/1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--bgColor);
+    cursor: pointer;
+    border-radius: .3rem;
+    margin-bottom: 10px;
+}
+
+.main-img div img, 
+.sub-img div img {
+    width: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+    object-position: center center;
+    -o-object-position: center center;
+    transform: scale(.8);
+    transition: .3s;
+}
+
+.main-img div:hover img, 
+.sub-img div:hover img {
+    transform: scale(.9);
+}
+
+.product-details .details h4 {
+    font-size: 30px !important;
+}
+
+.product-details .details h6 {
+    font-size: 14 !important;
+    color:rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    line-height: 0;
+}
+
+.product-details .details p {
+    margin: 15px 0px 10px 0px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.product-details .details .price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.product-details .details .price span {
+    font-size: 14px;
+    text-decoration: line-through;
+    margin:0px 1px;
+}
+
+.product-details .details .button {
+    gap: 30px;
+}
+.qty {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	text-align: center;
+	
+	label {
+		flex: 1 0 100%;		
+	}
+	input {
+		/* width: 7rem; height: 3rem;	 */
+		font-size: 1.3rem;
+		text-align: center;
+		border: 1px solid var(--navColor);
+	}
+	button {
+		width: 3rem; height: 3rem;
+		color: #fff;
+        border: 0;
+		font-size: 2rem;
+		background: var(--navColor);
+	}
+	button.qtyminus {
+		margin-right: 0.3rem;
+	}
+	button.qtyplus {
+		margin-left: 0.3rem;
+	}
 }
