@@ -1349,7 +1349,7 @@ details p {
 }
 .qty {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	justify-content: start;
 	text-align: center;
 	
@@ -1357,22 +1357,164 @@ details p {
 		flex: 1 0 100%;		
 	}
 	input {
-		/* width: 7rem; height: 3rem;	 */
+		width: 3rem;
+        height: 2rem;	
 		font-size: 1.3rem;
 		text-align: center;
 		border: 1px solid var(--navColor);
 	}
 	button {
-		width: 3rem; height: 3rem;
+		width: 2rem; height: 2rem;
 		color: #fff;
         border: 0;
-		font-size: 2rem;
+		/* font-size: 2rem; */
 		background: var(--navColor);
 	}
 	button.qtyminus {
-		margin-right: 0.3rem;
+		/* margin-right: 0.3rem; */
 	}
 	button.qtyplus {
-		margin-left: 0.3rem;
+		/* margin-left: 0.3rem; */
 	}
+}
+
+
+
+/* cart sectio */
+
+.cart-section {
+    width: 100%;
+    margin: 80px 0px;
+    padding: 20px 0px;
+}
+
+/* table */
+/* Table */
+.table__body {
+    overflow: auto;
+}
+
+.table__body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0005;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+td input[type="checkbox"] {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+table, th, td {
+    padding: 1rem;
+    border-collapse: collapse;
+    position: relative;
+
+}
+
+
+thead th {
+    top: 0;
+    left: 0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0002 !important;
+}
+
+tbody tr {
+    transition: .3s;
+}
+
+/* tbody tr:hover{
+    background-color: #0004 !important;
+} */
+
+
+@media (max-width:1000px) {
+    td:not(:first-of-type) {
+        min-width: 12rem !important;
+    }
+
+}
+
+.table-img {
+    aspect-ratio: 1/1;
+    width: 100px;
+    background-color: var(--bgColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.table-img img {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+}
+
+table tr td a{
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+table tr td a:hover {
+    color: #000;
+}
+
+table tr td a i {
+    transition: .3s;
+}
+table tr td p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    line-height: 0;
+    letter-spacing: 1px;
+    margin: 5px 0px 20px 0px;
+}
+
+table tr td a:hover i {
+    transform: translateY(-5px) scale(1.1);
+    color: red;
+}
+
+table tr td a.delete-all {
+    color:red;
+    font-weight: 400;
+}
+
+table tr td a.delete-all:hover {
+    text-decoration: none  !important;
+}
+
+.sub-total {
+    background-color: #ddd;
+    font-size: 18px;
+    font-size: 600;
+}
+
+.cart-totals .val-div span {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.cart-totals .total {
+    color: var(--navColor);
 }

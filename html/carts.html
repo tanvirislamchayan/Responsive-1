@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- owl carousel -->
+     <link rel="stylesheet" href="../css/owl.carousel.min.css">
+     <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+
+
+
+    <title>Ecommerce website!</title>
+  </head>
+  <body>
+
+    <!-- header start -->
+     <header id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="../img/logo.png.webp" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav m-auto ">
+                    <li class="nav-item">
+                      <a class="nav-link" href="home.html">Home</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Categories <span class="ms-1" style="font-size: 16px;"><i class="fas fa-angle-down"></i></span> </a>
+                      <ul class="sub-menu">
+                        <li><a href="">Page</a></li>
+                        <li><a href="">Page</a></li>
+                        <li><a href="">Page</a></li>
+                        <li><a href="">Page</a></li>
+                      </ul>
+                    </li>
+
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pages <span class="ms-1" style="font-size: 16px;"><i class="fas fa-angle-down"></i></span> </a>
+                      <ul class="sub-menu">
+                        <li><a href="">Page</a></li>
+                        <li><a href="">Page</a></li>
+                        <li><a href="">Page</a></li>
+                        <li><a href="">Page</a></li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Blog <span class="ms-1" style="font-size: 16px;"><i class="fas fa-angle-down"></i></span> </a>
+                      <ul class="sub-menu">
+                        <li class="selected-page"><a href="blog.html">Blog-1</a></li>
+                        <li><a href="">Page</a></li>
+                        <li><a href="">Page</a></li>
+                        <li><a href="">Page</a></li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    
+                  </ul>
+                  <div class="form-inline my-2 my-lg-0">
+                    <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+                    <a class="nav-icon" href="login.html">
+                      <i class="fa-regular fa-user"></i>
+                    </a>
+
+                    <a class="nav-icon" href="#">
+                      <i class="fa-regular fa-heart"></i> <span class="icon-badge">9</span>
+                    </a>
+                    <a class="nav-icon active" href="carts.html">
+                      <i class="fa-solid fa-cart-shopping"></i> <span class="icon-badge">9</span>
+                    </a>
+                  </div>
+                </div>
+              </nav>
+        </div>
+     </header>
+    <!-- header ENd -->
+
+    <!-- search-bar section start -->
+     <section class="search-bar" id="search-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-auto">
+            <div class="search-div">
+              <div class="form-inline justify-content-center my-3">
+                <input class="form-control mr-sm-2" type="search" placeholder="Enter Email" aria-label="Enter Email">
+                <button class="theme-btn my-2 my-sm-0" type="submit"> <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </section>
+    <!-- search-bar section end -->
+
+
+    <!-- cart section start -->
+     <section class="cart-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-8">
+
+            <div class="table__body mb-5">
+              <table class="table">
+
+                <thead class="thead-light">
+                  <tr style="margin-bottom: 10px !important;">
+                    <td>
+                      <input type="checkbox" name="select all" id="select-all">
+                    </td>
+                    <td class="text-start">
+                      Select all
+                    </td>
+                    <td colspan="4" class="text-right">
+                      <a href="#" class="delete-all"> <i class="mr-1 fa fa-trash"></i> Delete all </a>
+                    </td>
+                  </tr>
+                </thead>
+
+                  <thead class="thead-light">
+                  <tr>
+                      <th scope="col">#</th>
+                      <th scope="col"> <span>Image</span></th>
+                      <th scope="col"> <span>Product</span> </th>
+                      <th scope="col" class="text-right"> <span>Price</span> </th>
+                      <th scope="col"> <span>Quantity</span> </th>
+                      <th scope="col" class="text-right"> <span>Total</span> </th>
+                  </tr>
+                  </thead>
+  
+                  <tbody>
+
+
+                    <tr class="product-table-row">
+                      <td>
+                          <input class="" type="checkbox" name="selected_products" value="" id="flexCheckDefault">
+                      </td>
+                      <td>
+                        <div class="table-img">
+                          <img src="../img/p-1.png" alt="">
+                        </div>
+                      </td>
+
+                      <td>
+                        <div>
+                          <a href="product-details.html"> Product name </a>
+                          <p> Brand </p>
+                          <div class="d-flex justify-content-between">
+                            <a href="#"> <i class="fa-solid fa-trash"></i> </a>
+                            <a href="#"> <i class="fa fa-heart"></i> </a>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="text-right" >$<span class="pro-price" value="399">399</span> </td>
+                      <td>
+                        <p class="qty">
+                          <button class="qtyminus" aria-hidden="true">&minus;</button>
+                          <input type="number" name="qty" id="qty" min="1" max="10" step="1" value="1">
+                          <button class="qtyplus" aria-hidden="true">&plus;</button>
+                        </p>
+                      </td>
+                      <td class="text-right">
+                        $<span class="pro-total-price" value="399">399</span>
+                      </td>
+                    </tr>
+
+
+                    <tr class="product-table-row">
+                      <td>
+                          <input class="" type="checkbox" name="selected_products" value="" id="flexCheckDefault">
+                      </td>
+                      <td>
+                        <div class="table-img">
+                          <img src="../img/p-1.png" alt="">
+                        </div>
+                      </td>
+
+                      <td>
+                        <div>
+                          <a href="product-details.html"> Product name </a>
+                          <p> Brand </p>
+                          <div class="d-flex justify-content-between">
+                            <a href="#"> <i class="fa-solid fa-trash"></i> </a>
+                            <a href="#"> <i class="fa fa-heart"></i> </a>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="text-right" >
+                        $<span class="pro-price" value="399">399</span>
+                      </td>
+                      <td>
+                        <p class="qty">
+                          <button class="qtyminus" aria-hidden="true">&minus;</button>
+                          <input type="number" name="qty" id="qty" min="1" max="10" step="1" value="1">
+                          <button class="qtyplus" aria-hidden="true">&plus;</button>
+                        </p>
+                      </td>
+                      <td class="text-right">
+                        $<span class="pro-total-price" value="399">399</span>
+                      </td>
+                    </tr>
+
+
+                  </tbody>
+
+              </table>
+            </div>
+
+          </div> <!--product table-->
+
+
+         
+
+          <div class="col-md-4 col-sm-4">
+            <div class="cart-totals p-3 bg-light border shadow-sm rounded">
+              <h4>Order Summary</h4>
+              <hr>
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex justify-content-between align-items-center my-2 val-div">
+                    <span>Subtotal</span>
+                    <h6>$399</h6>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center my-2 val-div">
+                    <span>Delivery</span>
+                    <h6>
+                      $11
+                    </h6>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center my-2 val-div">
+                    <span>Taxes</span>
+                    <h6>$0</h6>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="coupon">
+                    <form>
+                      <h5>Apply Coupon Code</h5>
+                      <div class="d-flex">
+                        <input type="text" class="ml-1 form-control" id="coupon" placeholder="Apply Coupon">
+                        <button type="submit" class="ml-1 btn theme-btn">Submit</button>
+                      </div>
+                    </form>
+                  </div> <!--coupon-->
+                  <hr>
+                </div>
+
+                <div class="col-12">
+                  <div class="d-flex justify-content-between align-items-center my-2 val-div">
+                    <span>Total</span>
+                    <h4 class="total">$410</h4>
+                  </div>
+                 
+                </div>
+
+                <div class="col-12 mt-3 text-right">
+                  <a href="#" class="theme-btn"> Proceed to checkout </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+     </section>
+    <!-- cart section end -->
+
+
+     <!-- footer section start -->
+     <footer class="footer">
+      <div class="container">
+        <!-- footer top menus -->
+         <div class="row">
+
+          <div class="col-lg-2 col-md-2">
+            <div class="footer-item">
+              <h4>Section</h4>
+              <ul class="list-group">
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2">
+            <div class="footer-item">
+              <h4>Section</h4>
+              <ul class="list-group">
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2">
+            <div class="footer-item">
+              <h4>Section</h4>
+              <ul class="list-group">
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2">
+            <div class="footer-item">
+              <h4>Section</h4>
+              <ul class="list-group">
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+                <li> <a href="">Link</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-item">
+              <h4>Newslatter</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, quam.</p>
+              <form class="form-inline justify-content-center mt-3">
+                <input class="form-control mr-sm-2" type="email" placeholder="Enter Email" aria-label="Enter Email">
+                <button class="theme-btn my-2 my-sm-0" type="submit">Submit</button>
+              </form>
+            </div>
+            <div class="links">
+              <h4>Join us with</h4>
+              <div class=" d-flex justify-content-start align-items-center flex-wrap">
+                <a href="https://web.facebook.com/titanvir01" target="_blank"> <i class="fa-brands fa-facebook"></i> </a>
+                  <a href="https://www.instagram.com/titanvir01/" target="_blank" > <i class="fa-brands fa-instagram"></i> </a>
+                  <a href="#"> <i class="fa-brands fa-x-twitter"></i> </a>
+                  <a href="#"> <i class="fa-brands fa-linkedin"></i> </a>
+                  <a href="https://github.com/tanvirislamchayan" target="_blank"> <i class="fa-brands fa-github"></i> </a>
+                  <a href="https://www.youtube.com/@titechbd" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+              </div>
+            </div>
+          </div>
+         </div>
+      </div>
+
+      <!-- footer bottom copyright -->
+      <div class="copyright">
+        <div class="container-fluid bg-dark text-white p-2">
+          <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="copy-text">
+                  &copy; All copyrights reserved by MTA Productions, 2024
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="copy-links">
+                <div class="d-flex justify-content-end flex-wrap">
+                  <a href="https://web.facebook.com/titanvir01" target="_blank"> <i class="fa-brands fa-facebook"></i> </a>
+                  <a href="https://www.instagram.com/titanvir01/" target="_blank" > <i class="fa-brands fa-instagram"></i> </a>
+                  <a href="#"> <i class="fa-brands fa-x-twitter"></i> </a>
+                  <a href="#"> <i class="fa-brands fa-linkedin"></i> </a>
+                  <a href="https://github.com/tanvirislamchayan" target="_blank"> <i class="fa-brands fa-github"></i> </a>
+                  <a href="https://www.youtube.com/@titechbd" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </footer>
+   <!-- footer section end -->
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/owl.carousel.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
