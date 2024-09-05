@@ -135,7 +135,7 @@
                 <thead class="thead-light">
                   <tr style="margin-bottom: 10px !important;">
                     <td>
-                      <input type="checkbox" name="select all" id="select-all">
+                      <input type="checkbox"  name="select all" id="select-all">
                     </td>
                     <td class="text-start">
                       Select all
@@ -162,7 +162,7 @@
 
                     <tr class="product-table-row">
                       <td>
-                          <input class="" type="checkbox" name="selected_products" value="" id="flexCheckDefault">
+                          <input class="selected_products" type="checkbox" name="selected_products" value="" id="flexCheckDefault">
                       </td>
                       <td>
                         <div class="table-img">
@@ -196,7 +196,7 @@
 
                     <tr class="product-table-row">
                       <td>
-                          <input class="" type="checkbox" name="selected_products" value="" id="flexCheckDefault">
+                          <input class="selected_products" type="checkbox" name="selected_products" value="" id="flexCheckDefault">
                       </td>
                       <td>
                         <div class="table-img">
@@ -215,7 +215,7 @@
                         </div>
                       </td>
                       <td class="text-right" >
-                        $<span class="pro-price" value="399">399</span>
+                        $<span class="pro-price" value="499">499</span>
                       </td>
                       <td>
                         <p class="qty">
@@ -225,7 +225,7 @@
                         </p>
                       </td>
                       <td class="text-right">
-                        $<span class="pro-total-price" value="399">399</span>
+                        $<span class="pro-total-price" value="499">499</span>
                       </td>
                     </tr>
 
@@ -248,17 +248,17 @@
                 <div class="col-12">
                   <div class="d-flex justify-content-between align-items-center my-2 val-div">
                     <span>Subtotal</span>
-                    <h6>$399</h6>
+                    <h6 >$<span id="subTotal" value="">0</span> </h6>
                   </div>
-                  <div class="d-flex justify-content-between align-items-center my-2 val-div">
-                    <span>Delivery</span>
+                  <!-- <div class="d-flex justify-content-between align-items-center my-2 val-div">
+                    <span>Delivery </span>
                     <h6>
-                      $11
+                      $<span style="" id="delivery" value="10">10</span>
                     </h6>
-                  </div>
+                  </div> -->
                   <div class="d-flex justify-content-between align-items-center my-2 val-div">
-                    <span>Taxes</span>
-                    <h6>$0</h6>
+                    <span class="tax" value="5">Taxes(5%)</span>
+                    <h6>$<span class="taxShow" value="0">0</span></h6>
                   </div>
                 </div>
                 <div class="col-12">
@@ -277,7 +277,7 @@
                 <div class="col-12">
                   <div class="d-flex justify-content-between align-items-center my-2 val-div">
                     <span>Total</span>
-                    <h4 class="total">$410</h4>
+                    <h4 class="total">$<span class="amountTotal" value="0">0</span> </h4>
                   </div>
                  
                 </div>

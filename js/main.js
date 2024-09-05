@@ -110,72 +110,97 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // quantity calculatin 
 
-var rows = document.querySelectorAll('.product-table-row');
+document.addEventListener('DOMContentLoaded', ()=> {
+    var rows = document.querySelectorAll('.product-table-row');
+    var selectAllProducts =  document.querySelector('#select-all');
+    var subTotalPrice = document.getElementById('subTotal');
+    var tax = document.querySelector('.tax');
+    var taxShow = document.querySelector('.taxShow');
+    var Total = document.querySelector('.amountTotal');
+
+    function calculateSubtotal() {
+        var allSelectedProPrice = document.querySelectorAll('.selected');
+        var subTotal = 0
+        if (allSelectedProPrice.length > 0) {
+            allSelectedProPrice.forEach((selected) => {
+                // console.log(`Element ${index + 1}:`, element); 
+                var price = Number(selected.getAttribute('value'));
+                subTotal += price;
+            });
+        } 
+
+        subTotalPrice.setAttribute('value', subTotal);
+        subTotalPrice.innerText = subTotal;
+        let taxPercentage = Number(tax.getAttribute('value'));
+        let taxAmount = (subTotal * (taxPercentage / 100)).toFixed(2);
+        taxShow.setAttribute('value',taxAmount);
+        taxShow.innerText = taxAmount;
+        let amountTotal = Number(subTotal) + Number(taxAmount);
+        Total.setAttribute('value', amountTotal);
+        Total.innerText = amountTotal;
+    };
 
 
-
-rows.forEach(row => {
-    var inputNumber =  row.querySelector('#qty');
-    var plus = row.querySelector('.qtyplus');
-    var minus = row.querySelector('.qtyminus');
-    var proPrice = row.querySelector('.pro-price');
-    var proTotalPrice = row.querySelector('.pro-total-price');
-
-    function changVal(vals) {
-        var max = Number(inputNumber.getAttribute('max'));
-        var min = Number(inputNumber.getAttribute('min'));
-
-        var newValue = Number(inputNumber.value) + vals;
-
-        if (newValue >= min && newValue <= max) {
-            inputNumber.value = newValue;
-        }
-    }
-
-    plus.addEventListener('click', ()=> {
-        changVal(value=1)
+    selectAllProducts.addEventListener('change', ()=> {
+        rows.forEach(row => {
+            var selectedProduct = row.querySelector('.pro-total-price');
+            if (selectAllProducts.checked) {
+                selectedProduct.classList.add('selected')
+            } else {
+                selectedProduct.classList.remove('selected')
+            }
+        });
+        calculateSubtotal()
     });
 
-    minus.addEventListener('click', () => {
-        changVal(value=-1)
+    rows.forEach(row => {
+        var inputNumber =  row.querySelector('#qty');
+        var plus = row.querySelector('.qtyplus');
+        var minus = row.querySelector('.qtyminus');
+        var proPrice = row.querySelector('.pro-price');
+        var proTotalPrice = row.querySelector('.pro-total-price');
+        var selectedProduct = row.querySelector('.selected_products');
+
+
+        selectedProduct.addEventListener('change', () => {
+            checkSelect(selectedProduct);
+        });
+
+        function checkSelect(selectedProduct) {
+            if (selectedProduct.checked) {
+                proTotalPrice.classList.add('selected')
+            } else {
+                proTotalPrice.classList.remove('selected')
+            }
+            calculateSubtotal()
+        }
+    
+        function changVal(vals) {
+            var max = Number(inputNumber.getAttribute('max'));
+            var min = Number(inputNumber.getAttribute('min'));
+    
+            var newValue = Number(inputNumber.value) + vals;
+    
+            if (newValue >= min && newValue <= max) {
+                inputNumber.value = newValue;
+                var newPrice = Number(proPrice.getAttribute('value')) * newValue;
+                proTotalPrice.setAttribute('value', newPrice);
+                proTotalPrice.innerText = newPrice;
+            }
+            calculateSubtotal()
+        }
+    
+        plus.addEventListener('click', ()=> {
+            changVal(value=1)
+        });
+    
+        minus.addEventListener('click', () => {
+            changVal(value=-1)
+        });
     });
 });
 
-// quantity calculation
-// var input = document.querySelector('#qty');
-// var btnminus = document.querySelector('.qtyminus');
-// var btnplus = document.querySelector('.qtyplus');
 
-// if (input !== undefined && btnminus !== undefined && btnplus !== undefined && input !== null && btnminus !== null && btnplus !== null) {
-	
-// 	var min = Number(input.getAttribute('min'));
-// 	var max = Number(input.getAttribute('max'));
-// 	var step = Number(input.getAttribute('step'));
-
-// 	function qtyminus(e) {
-// 		var current = Number(input.value);
-// 		var newval = (current - step);
-// 		if(newval < min) {
-// 			newval = min;
-// 		} else if(newval > max) {
-// 			newval = max;
-// 		} 
-// 		input.value = Number(newval);
-// 		e.preventDefault();
-// 	}
-
-// 	function qtyplus(e) {
-// 		var current = Number(input.value);
-// 		var newval = (current + step);
-// 		if(newval > max) newval = max;
-// 		input.value = Number(newval);
-// 		e.preventDefault();
-// 	}
-		
-// 	btnminus.addEventListener('click', qtyminus);
-// 	btnplus.addEventListener('click', qtyplus);
-  
-// } // End if test
 
 // img toggle
 const mainImg = document.querySelector('.main-img img');

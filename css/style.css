@@ -1433,9 +1433,6 @@ thead th {
     left: 0;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #0002 !important;
-}
 
 tbody tr {
     transition: .3s;
