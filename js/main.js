@@ -1,3 +1,26 @@
+document.addEventListener('DOMContentLoaded', ()=> {
+    const optList = document.querySelector('.list-options');
+    const options = optList.querySelectorAll('.option');
+    const values = document.querySelector('.values');
+    const showVals = values.querySelectorAll('.value');
+
+    options.forEach((option, index) => {
+        option.addEventListener('click', () => {
+            options.forEach(opt => opt.classList.remove('active'));
+            option.classList.add('active');
+            showVals.forEach((show, i) => {
+                if (i === index) {
+                    show.classList.remove('d-none');
+                    show.classList.add('active', 'show');
+                } else {
+                    show.classList.remove('active', 'show');
+                    show.classList.add('d-none');
+                }
+            });
+        });
+    });
+});
+
 $(document).ready(function(){
 
     $('#bestSells').owlCarousel({
@@ -117,6 +140,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     var tax = document.querySelector('.tax');
     var taxShow = document.querySelector('.taxShow');
     var Total = document.querySelector('.amountTotal');
+    var couponDiscount = document.getElementById('coupon-discount');
 
     function calculateSubtotal() {
         var allSelectedProPrice = document.querySelectorAll('.selected');
@@ -127,17 +151,26 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 var price = Number(selected.getAttribute('value'));
                 subTotal += price;
             });
+
+            subTotalPrice.setAttribute('value', subTotal);
+            subTotalPrice.innerText = subTotal;
+            let taxPercentage = Number(tax.getAttribute('value'));
+            let taxAmount = (subTotal * (taxPercentage / 100)).toFixed(2);
+            taxShow.setAttribute('value',taxAmount);
+            taxShow.innerText = taxAmount;
+
+            let amountTota = 0;
+            let discount = Number(couponDiscount.getAttribute('value'));
+            if (discount > 0) {
+                amountTotal = Number(subTotal) + Number(taxAmount) - discount ;
+            } else {
+                amountTotal = Number(subTotal) + Number(taxAmount);
+            }
+            
+            Total.setAttribute('value', amountTotal);
+            Total.innerText = amountTotal;
         } 
 
-        subTotalPrice.setAttribute('value', subTotal);
-        subTotalPrice.innerText = subTotal;
-        let taxPercentage = Number(tax.getAttribute('value'));
-        let taxAmount = (subTotal * (taxPercentage / 100)).toFixed(2);
-        taxShow.setAttribute('value',taxAmount);
-        taxShow.innerText = taxAmount;
-        let amountTotal = Number(subTotal) + Number(taxAmount);
-        Total.setAttribute('value', amountTotal);
-        Total.innerText = amountTotal;
     };
 
 
@@ -242,3 +275,7 @@ productCheckboxes.forEach(checkbox => {
         }
     });
 });
+
+
+// profile
+
