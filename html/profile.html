@@ -109,8 +109,13 @@
      <section class="profile-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-3 ">
-                  <div class="list-options">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                  <div id="" class="d-lg-none d-sm-block p-2 my-3">
+                    <button class="theme-btn" id="profile-toggler">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                  </div>
+                  <div id="profil-menu" class="list-options">
                       <h4><color>M</color>anage <color>A</color>ccount</h4>
                         <div class="option active">
                             My Profile
@@ -118,10 +123,6 @@
 
                         <div class="option ">
                             Address Book
-                        </div><!--option-->
-
-                        <div class="option ">
-                            Payment Methods
                         </div><!--option-->
 
                         <hr>
@@ -143,8 +144,9 @@
                 </div> <!--options-->
 
                 <div class="col-lg-9 col-md-9 ">
-                    <div class="values bg-light rounded border shadow-sm p-1">
+                    <div class="values">
                         <div class="value fade active show p-2">
+                          <!--profile content section-->
                           <div class="profile-content-section">
                             <div class="row">
                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -172,10 +174,10 @@
                                 </div>
                               </div>
                             </div>
-                          </div>
-                            
+                          </div> <!--profile-->
                         </div><!--value-->
 
+                        <!-- address books content section -->
                         <div class="value fade">
                             <div class="address-book-content-section">
                               <div class="row">
@@ -250,12 +252,271 @@
                             </div>
                         </div><!--value-->
 
+                        <!-- my orders section -->
                         <div class="value fade">
-                            White List
+                          <div class="orders-content-section">
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="table__body mb-5">
+                                    <table class="table">
+                      
+                                        <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col"> <span>Image</span></th>
+                                            <th scope="col"> <span>Product</span> </th>
+                                            <th scope="col" class="text-right"> <span>Price</span> </th>
+                                            <th scope="col" class="text-right"> <span>Quantity</span> </th>
+                                            <th scope="col" class="text-right"> <span>Total</span> </th>
+                                            <th scope="col" > <span></span> </th>
+                                        </tr>
+                                        </thead>
+                        
+                                        <tbody>
+                                          <tr class="product-table-row">
+                                            
+                                            <td>
+                                              <div class="table-img">
+                                                <img src="../img/p-1.png" alt="">
+                                              </div>
+                                            </td>
+                      
+                                            <td>
+                                              <div>
+                                                <a href="product-details.html"> Product name </a>
+                                                <p> Brand </p>
+                                                <div class="d-flex justify-content-between">
+                                                  <a href="#"> <i class="fa-solid fa-trash"></i> </a>
+                                                  <a href="#"> <i class="fa fa-heart"></i> </a>
+                                                </div>
+                                              </div>
+                                            </td>
+                                            <td class="text-right" >$<span class="pro-price" value="399">399</span> </td>
+                                            <td class="text-right">
+                                              <span>1</span>
+                                            </td>
+                                            <td class="text-right">
+                                              $<span class="pro-total-price" value="399">399</span>
+                                            </td>
+                                            <td class="text-right">
+                                              <a href="#"> Cancel </a>
+                                            </td>
+                                          </tr>
+                      
+                      
+                                          <tr class="product-table-row">
+                                            
+                                            <td>
+                                              <div class="table-img">
+                                                <img src="../img/p-1.png" alt="">
+                                              </div>
+                                            </td>
+                      
+                                            <td>
+                                              <div>
+                                                <a href="product-details.html"> Product name </a>
+                                                <p> Brand </p>
+                                                <div class="d-flex justify-content-between">
+                                                  <a href="#"> <i class="fa-solid fa-trash"></i> </a>
+                                                  <a href="#"> <i class="fa fa-heart"></i> </a>
+                                                </div>
+                                              </div>
+                                            </td>
+                                            <td class="text-right" >
+                                              $<span class="pro-price" value="499">499</span>
+                                            </td>
+                                            <td class="text-right">
+                                              <span>1</span>
+                                            </td>
+                                            <td class="text-right">
+                                              $<span class="pro-total-price" value="499">499</span>
+                                            </td>
+                                            <td class="text-right">
+                                              <span>Shipped</span>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                  </div>                                
+                                </div>
+                              </div>
+                          </div> <!--arders secion-->
                         </div><!--value-->
 
+                        <!-- carts content section -->
                         <div class="value fade">
-                            Orders
+                            <div class="cart-content-section">
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="table__body mb-5">
+                                    <table class="table">
+                      
+                                        <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col"> <span>Image</span></th>
+                                            <th scope="col"> <span>Product</span> </th>
+                                            <th scope="col" class="text-right"> <span>Price</span> </th>
+                                            <th scope="col" class="text-right"> <span>Quantity</span> </th>
+                                            <th scope="col" class="text-right"> <span>Total</span> </th>
+                                        </tr>
+                                        </thead>
+                        
+                                        <tbody>
+                      
+                      
+                                          <tr class="product-table-row">
+                                            <td>
+                                              <div class="table-img">
+                                                <img src="../img/p-1.png" alt="">
+                                              </div>
+                                            </td>
+                      
+                                            <td>
+                                              <div>
+                                                <a href="product-details.html"> Product name </a>
+                                                <p> Brand </p>
+                                                <div class="d-flex justify-content-between">
+                                                  <a href="#"> <i class="fa-solid fa-trash"></i> </a>
+                                                  <a href="#"> <i class="fa fa-heart"></i> </a>
+                                                </div>
+                                              </div>
+                                            </td>
+                                            <td class="text-right" >$<span class="pro-price" value="399">399</span> </td>
+                                            <td class="text-right">
+                                              <span>1</span>
+                                            </td>
+                                            <td class="text-right">
+                                              $<span class="pro-total-price" value="399">399</span>
+                                            </td>
+                                          </tr>
+                      
+                      
+                                          <tr class="product-table-row">
+                                            <td>
+                                              <div class="table-img">
+                                                <img src="../img/p-1.png" alt="">
+                                              </div>
+                                            </td>
+                      
+                                            <td>
+                                              <div>
+                                                <a href="product-details.html"> Product name </a>
+                                                <p> Brand </p>
+                                                <div class="d-flex justify-content-between">
+                                                  <a href="#"> <i class="fa-solid fa-trash"></i> </a>
+                                                  <a href="#"> <i class="fa fa-heart"></i> </a>
+                                                </div>
+                                              </div>
+                                            </td>
+                                            <td class="text-right" >
+                                              $<span class="pro-price" value="499">499</span>
+                                            </td>
+                                            <td class="text-right">
+                                              <span>1</span>
+                                            </td>
+                                            <td class="text-right">
+                                              $<span class="pro-total-price" value="499">499</span>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                                <div class="col-12 text-right">
+                                  <a href="carts.html" class="theme-btn"> Edit Carts </a>
+                                </div>
+                              </div>
+                            </div>
+                        </div><!--value-->
+
+
+                        <!-- my orders section -->
+                        <div class="value fade">
+                          <div class="orders-content-section">
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="table__body mb-5">
+                                    <table class="table">
+                      
+                                        <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col"> <span>Image</span></th>
+                                            <th scope="col"> <span>Product</span> </th>
+                                            <th scope="col" class="text-right"> <span>Price</span> </th>
+                                            <th scope="col" class="text-right"> <span>Quantity</span> </th>
+                                            <th scope="col" class="text-right"> <span>Total</span> </th>
+                                            <th scope="col" > <span></span> </th>
+                                        </tr>
+                                        </thead>
+                        
+                                        <tbody>
+                                          <tr class="product-table-row">
+                                            
+                                            <td>
+                                              <div class="table-img">
+                                                <img src="../img/p-1.png" alt="">
+                                              </div>
+                                            </td>
+                      
+                                            <td>
+                                              <div>
+                                                <a href="product-details.html"> Product name </a>
+                                                <p> Brand </p>
+                                                <div class="d-flex justify-content-between">
+                                                  <a href="#"> <i class="fa-solid fa-trash"></i> </a>
+                                                  <a href="#"> <i class="fa fa-heart"></i> </a>
+                                                </div>
+                                              </div>
+                                            </td>
+                                            <td class="text-right" >$<span class="pro-price" value="399">399</span> </td>
+                                            <td class="text-right">
+                                              <span>1</span>
+                                            </td>
+                                            <td class="text-right">
+                                              $<span class="pro-total-price" value="399">399</span>
+                                            </td>
+                                            <td class="text-right">
+                                              <a href="product-details.html"> Reorder </a>
+                                            </td>
+                                          </tr>
+                      
+                      
+                                          <tr class="product-table-row">
+                                            
+                                            <td>
+                                              <div class="table-img">
+                                                <img src="../img/p-1.png" alt="">
+                                              </div>
+                                            </td>
+                      
+                                            <td>
+                                              <div>
+                                                <a href="product-details.html"> Product name </a>
+                                                <p> Brand </p>
+                                                <div class="d-flex justify-content-between">
+                                                  <a href="#"> <i class="fa-solid fa-trash"></i> </a>
+                                                  <a href="#"> <i class="fa fa-heart"></i> </a>
+                                                </div>
+                                              </div>
+                                            </td>
+                                            <td class="text-right" >
+                                              $<span class="pro-price" value="499">499</span>
+                                            </td>
+                                            <td>
+                                              <span>1</span>
+                                            </td>
+                                            <td class="text-right">
+                                              $<span class="pro-total-price" value="499">499</span>
+                                            </td>
+                                            <td class="text-right">
+                                              <a href="product-details.html">Reorder</a>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                  </div>                                
+                                </div>
+                              </div>
+                          </div> <!--arders secion-->
                         </div><!--value-->
 
                     </div>
@@ -268,7 +529,8 @@
 
 
 
-
+     <script>
+     </script>
 
 
     <!-- search-bar section start -->

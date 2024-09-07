@@ -21,6 +21,18 @@ document.addEventListener('DOMContentLoaded', ()=> {
     });
 });
 
+document.addEventListener('DOMContentLoaded', ()=> {
+    const profileToggler = document.getElementById('profile-toggler');
+    const profileMenu = document.getElementById('profil-menu');
+    profileToggler.addEventListener('click', ()=> {
+        if (profileMenu.classList.contains('show')) {
+            profileMenu.classList.remove('show');
+        } else {
+            profileMenu.classList.add('show');
+        }
+    });
+});
+
 $(document).ready(function(){
 
     $('#bestSells').owlCarousel({
