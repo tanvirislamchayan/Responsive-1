@@ -1603,3 +1603,92 @@ table tr td a.delete-all:hover {
         display: flex !important;
     } */
 }
+
+
+
+/* about page section */
+.about-us-section {
+    margin: 80px 0px;
+    padding: 0px 0px 20px 0px;
+    width: 100%;
+}
+.about-us-section h1 {
+    text-align: center;
+    margin-bottom: 80px;
+    color: var(--navColor);
+}
+
+.about-us-content {
+    margin: 50px 0px;
+}
+
+
+
+.about-us-content h2 {
+    text-align: center;
+    background-color: var(--bgColor);
+    padding: 10px 0;
+    border-radius: .3rem;
+    margin-bottom: 20px;
+}
+
+.about-us-content p {
+    font-size: 18px;
+}
+
+.about-us-content:nth-child(even) .row {
+    flex-direction: row-reverse !important;
+}
+
+
+/* Apply row-reverse for medium devices and larger */
+@media (min-width: 768px) {
+    .about-us-content:nth-child(even) .row {
+      flex-direction: row-reverse;
+    }
+  }
+  
+  /* For small and extra-small devices, keep the normal flow */
+  @media (max-width: 767.98px) {
+    .about-us-content .row {
+      flex-direction: row;
+    }
+  }
+  
+
+  /* conatact section */
+  .contact-us-section {
+    margin: 80px 0px;
+    width: 100%;
+    padding: 20px 0px;
+    background-color: whitesmoke;
+  }
+
+  .contact-us-section h4 {
+    border-bottom: .5px solid black;
+    padding: 10px;
+    border-color: var(--navColor);
+    margin-bottom: 30px;
+  }
+
+  .contact-options {
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  .contact-options a {
+    margin: 40px 0px;
+  }
+
+.option {
+    padding: 10px;
+    border: 1px solid #0005;
+    background-color: #fff;
+    border-radius: .2rem;
+    box-shadow: .5px .5px .5px #0005;
+}
+
+.option:hover {
+    transform: translateY(-10px) !important;
+    border-color: var(--navColor);
+}

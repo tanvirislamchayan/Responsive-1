@@ -143,8 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
-// quantity calculatin 
-
 document.addEventListener('DOMContentLoaded', ()=> {
     var rows = document.querySelectorAll('.product-table-row');
     var selectAllProducts =  document.querySelector('#select-all');
@@ -154,93 +152,100 @@ document.addEventListener('DOMContentLoaded', ()=> {
     var Total = document.querySelector('.amountTotal');
     var couponDiscount = document.getElementById('coupon-discount');
 
+    // Function to calculate subtotal
     function calculateSubtotal() {
         var allSelectedProPrice = document.querySelectorAll('.selected');
-        var subTotal = 0
+        var subTotal = 0;
+
         if (allSelectedProPrice.length > 0) {
             allSelectedProPrice.forEach((selected) => {
-                // console.log(`Element ${index + 1}:`, element); 
                 var price = Number(selected.getAttribute('value'));
                 subTotal += price;
             });
+        }
 
-            subTotalPrice.setAttribute('value', subTotal);
-            subTotalPrice.innerText = subTotal;
-            let taxPercentage = Number(tax.getAttribute('value'));
-            let taxAmount = (subTotal * (taxPercentage / 100)).toFixed(2);
-            taxShow.setAttribute('value',taxAmount);
-            taxShow.innerText = taxAmount;
+        // Update the subtotal, tax, and total amount
+        subTotalPrice.setAttribute('value', subTotal);
+        subTotalPrice.innerText = subTotal;
 
-            let amountTota = 0;
-            let discount = Number(couponDiscount.getAttribute('value'));
-            if (discount > 0) {
-                amountTotal = Number(subTotal) + Number(taxAmount) - discount ;
-            } else {
-                amountTotal = Number(subTotal) + Number(taxAmount);
-            }
-            
-            Total.setAttribute('value', amountTotal);
-            Total.innerText = amountTotal;
-        } 
+        let taxPercentage = Number(tax.getAttribute('value'));
+        let taxAmount = (subTotal * (taxPercentage / 100)).toFixed(2);
+        taxShow.setAttribute('value', taxAmount);
+        taxShow.innerText = taxAmount;
 
-    };
+        let discount = Number(couponDiscount.getAttribute('value'));
+        let amountTotal = 0;
+        if (subTotal>0) {
+            amountTotal = subTotal + Number(taxAmount) - (discount > 0 ? discount : 0);
+        }
 
+        Total.setAttribute('value', amountTotal);
+        Total.innerText = amountTotal;
+    }
 
-    selectAllProducts.addEventListener('change', ()=> {
+    // Handle select all products
+    selectAllProducts.addEventListener('change', () => {
         rows.forEach(row => {
             var selectedProduct = row.querySelector('.pro-total-price');
             if (selectAllProducts.checked) {
-                selectedProduct.classList.add('selected')
+                selectedProduct.classList.add('selected');
             } else {
-                selectedProduct.classList.remove('selected')
+                selectedProduct.classList.remove('selected');
             }
         });
-        calculateSubtotal()
+        calculateSubtotal();
     });
 
+    // Handle individual product selection and quantity changes
     rows.forEach(row => {
-        var inputNumber =  row.querySelector('#qty');
+        var inputNumber = row.querySelector('#qty');
         var plus = row.querySelector('.qtyplus');
         var minus = row.querySelector('.qtyminus');
         var proPrice = row.querySelector('.pro-price');
         var proTotalPrice = row.querySelector('.pro-total-price');
         var selectedProduct = row.querySelector('.selected_products');
 
-
+        // Handle product selection/deselection
         selectedProduct.addEventListener('change', () => {
             checkSelect(selectedProduct);
         });
 
         function checkSelect(selectedProduct) {
             if (selectedProduct.checked) {
-                proTotalPrice.classList.add('selected')
+                proTotalPrice.classList.add('selected');
             } else {
-                proTotalPrice.classList.remove('selected')
+                proTotalPrice.classList.remove('selected');
             }
-            calculateSubtotal()
+            calculateSubtotal();
         }
-    
+
+        // Handle quantity increase/decrease
         function changVal(vals) {
             var max = Number(inputNumber.getAttribute('max'));
             var min = Number(inputNumber.getAttribute('min'));
-    
+
             var newValue = Number(inputNumber.value) + vals;
-    
+
             if (newValue >= min && newValue <= max) {
                 inputNumber.value = newValue;
                 var newPrice = Number(proPrice.getAttribute('value')) * newValue;
                 proTotalPrice.setAttribute('value', newPrice);
                 proTotalPrice.innerText = newPrice;
+
+                // If the product is checked, recalculate the subtotal
+                if (selectedProduct.checked) {
+                    calculateSubtotal();
+                }
             }
-            calculateSubtotal()
         }
-    
-        plus.addEventListener('click', ()=> {
-            changVal(value=1)
+
+        // Event listeners for increasing and decreasing quantity
+        plus.addEventListener('click', () => {
+            changVal(1);
         });
-    
+
         minus.addEventListener('click', () => {
-            changVal(value=-1)
+            changVal(-1);
         });
     });
 });
