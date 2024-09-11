@@ -1658,9 +1658,8 @@ table tr td a.delete-all:hover {
 
   /* conatact section */
   .contact-us-section {
-    margin: 80px 0px;
     width: 100%;
-    padding: 20px 0px;
+    padding: 50px 0px 20px 0px;
     background-color: whitesmoke;
   }
 
