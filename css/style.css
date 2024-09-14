@@ -5,6 +5,8 @@
     --bgColor:#f7e8ca;
     --f-bg: #f8fbff;
     --bg2:rgba(3, 113, 128, 0.5);
+    --contact-bg:#0B6477;
+    --contact-bg-light:#0b63776d;
 }
 
 /* global css */
@@ -1656,26 +1658,26 @@ table tr td a.delete-all:hover {
   }
   
 
-  /* conatact section */
-  .contact-us-section {
+  /* Help section */
+  .help-section {
     width: 100%;
     padding: 50px 0px 20px 0px;
     background-color: whitesmoke;
   }
 
-  .contact-us-section h4 {
+  .help-section h4 {
     border-bottom: .5px solid black;
     padding: 10px;
     border-color: var(--navColor);
     margin-bottom: 30px;
   }
 
-  .contact-options {
+  .help-options {
     padding: 20px;
     background-color: #fff;
   }
 
-  .contact-options a {
+  .help-options a {
     margin: 40px 0px;
   }
 
@@ -1691,3 +1693,103 @@ table tr td a.delete-all:hover {
     transform: translateY(-10px) !important;
     border-color: var(--navColor);
 }
+
+/* contact us section */
+.contact-us-sectoin {
+    width: 100%;
+    padding: 50px 0px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url(../img/contact-bg.webp) no-repeat center center;
+    backdrop-filter: blur(5px);
+    background-size: cover;
+}
+
+
+
+.contacts-options {
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contacts-options .logo {
+    gap: 10px;
+}
+
+.contacts-options .logo div {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--contact-bg);
+    box-shadow: 0px 0px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.contacts-options h5 {
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 0px 15px #000;
+}
+
+.contacts-options p {
+    text-shadow: 0px 0px 15px #000;
+    margin:0;
+    padding: 0px 0px 0px 20px;
+    color: #fff;
+    line-break: auto;
+    font-weight: 500;
+}
+
+.contacts-options .details .links {
+    gap: 20px;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.contacts-options .details .links a {
+    color: white;
+    text-shadow: 0px 0px 15px #000;
+    transition: .3s;
+}
+
+.contacts-options .details .links a:hover {
+    transform: translateY(-4px);
+}
+
+
+.form-design {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #0005;
+  }
+  
+  .input-field:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  textarea.input-field {
+    height: 150px;
+    resize: none; /* Prevents resizing */
+  }
+  
+  ::placeholder {
+    color: #999;
+    font-size: 16px;
+  }
+  
